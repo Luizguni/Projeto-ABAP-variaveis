@@ -1,0 +1,34 @@
+REPORT zcurso_o05. " Nome do programa
+
+" Declaração de variáveis de texto
+DATA ld_nome(100)        TYPE c.  " Nome
+DATA ld_sobrenome(10)    TYPE c.  " Sobrenome
+DATA ld_nomecompleto(10) TYPE c.  " Nome completo (nome + sobrenome)
+
+" Atribuição de valores
+ld_nome = 'Luiz'.
+ld_sobrenome = 'Guni'.
+
+" Montagem do nome completo com formatação (template string)
+ld_nomecompleto = |{ ld_nome } { ld_sobrenome }!|.
+
+" Habilita linhas em branco entre os blocos de texto
+SET BLANK LINES ON.
+
+" Impressão do convite
+WRITE: 'CONVITE PARA FESTA!'.  " Título
+SKIP.
+
+WRITE: 'Olá'.                 " Saudação
+SKIP.
+
+WRITE ld_nomecompleto.       " Nome completo com pontuação
+SKIP.
+
+WRITE: 'Você foi convidado para a festa na roça, contamos com sua presença!'. " Mensagem
+SKIP.
+
+WRITE: 'Atenciosamente'.     " Encerramento
+SKIP.
+
+WRITE: 'L.G.S LTDA'.         " Nome da empresa organizadora
